@@ -1,0 +1,17 @@
+body {
+    background-image: url("https: //cdn.pixabay.com/photo/2016/11/21/18/18/tiles-1846980_960_720.jpg");
+    margin: 0;
+}
+
+.squares {
+    margin: 48px auto;
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    gap: 16px;
+    height: 75px;
+    background: #3f202b;
+    border: 5px solid #2e0438;
+
+}
+
