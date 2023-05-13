@@ -1,5 +1,5 @@
  body {
-     background-image: url("https://cdn.pixabay.com/photo/2016/11/21/18/18/tiles-1846980_1280.jp");
+     background-image: url("https://cdn.pixabay.com/photo/2016/11/21/18/18/tiles-1846980_1280.jpg");
      margin: 0;
      font-family: Vina Sans;
      float: center;
@@ -10,6 +10,8 @@
      font-family: Vina Sans;
      float: center;
      font-size: 75px;
+     color: whitesmoke;
+     border-color: black;
      margin-left: 400px
  }
 

@@ -31,6 +31,34 @@ function buildSquare(color) {
 
 }
 
+const squares = document.querySelectorAll('.squares');
+
+squares.forEach(square => {
+    square.addEventListener("click", () => {
+        const revealed = element.getAttribute("data-revealed");
+
+        if (
+            awaitingEndOfMove
+            || revealed === "true"
+            || element == activeSquare
+        ) {
+            return;
+        }
+
+        // Show color
+        element.style.backgroundColor = color;
+
+        if (!activeSquare) {
+            activeSquare = element;
+
+            return;
+        }
+    });
+
+});
+
+const collection = document.getElementsByClassName("square");
+
 element.addEventListener("click", () => {
     const revealed = element.getAttribute("data-revealed");
 
@@ -42,13 +70,13 @@ element.addEventListener("click", () => {
         return;
     }
 
-    // Show color
+    // Reveal color
     element.style.backgroundColor = color;
 
     if (!activeSquare) {
         activeSquare = element;
 
-        return;
+        return;                                                                                    finished here;
     }
 
     const colorToMatch = activeSquare.getAttribute("data-color");
