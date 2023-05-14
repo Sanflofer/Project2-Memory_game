@@ -8,35 +8,141 @@
 
  #heading {
      font-family: Vina Sans;
-     float: center;
+     text-align: center;
      font-size: 75px;
-     color: whitesmoke;
+     color: rgb(246, 175, 11);
      border-color: black;
-     margin-left: 400px
  }
 
  #level {
-     float: center;
+     text-align: center;
      font-size: 25px;
      list-style-type: none;
      letter-spacing: 10px;
-     margin-left: 450px
  }
 
- .squares {
-     margin: 48px auto;
-     width: max-content;
+ p {
+     text-align: center;
+     font-size: 30px;
+ }
+
+ .actions {
+     display: flex;
+     justify-content: center;
+ }
+
+ .actions button {
+     padding: 8px 16px;
+     font-size: 30px;
+     border-radius: 10px;
+     background-color: #27ae60;
+     color: white;
+ }
+
+ .container {
+     display: flex;
+     justify-content: center;
+     background-color: transparent;
+ }
+
+ .grid {
      display: grid;
-     grid-template-columns: repeat(4, 75px);
-     gap: 16px;
-     height: 75px;
-     background: #3f202b;
-     border: 5px solid #2e0438;
+     grid-template-columns: repeat(4, 80px);
+     grid-template-rows: repeat(4, 80px);
+     grid-gap: 5px;
  }
 
- .square {
-     height: 75px;
-     background: #525949;
-     border: 5px solid #242222;
-     cursor: pointer;
+ .cell {
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     background-color: rgb(165, 51, 70);
+     border: 5px solid black;
+     transform-style: preserve-3d;
+     transition: all 0.5s ease-in-out;
+ }
+
+ .card.flipped {
+     transform: rotateY(180deg);
+ }
+
+ .front,
+ .back {
+     backface-visibility: hidden;
+ }
+
+ .card .front {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transform: rotateY(180deg);
+ }
+
+ .card .back {
+     background-color: bisque;
+     backface-visibility: hidden;
+ }
+
+ #1 {
+     background-color: aqua;
+ }
+
+ #2 {
+     background-color: blue;
+ }
+
+ #3 {
+     background-color: blueviolet;
+ }
+
+ #4 {
+     background-color: brown;
+ }
+
+ #5 {
+     background-color: chartreuse;
+ }
+
+ #6 {
+     background-color: cornflowerblue;
+ }
+
+ #7 {
+     background-color: darkgreen;
+ }
+
+ #8 {
+     background-color: darkorange;
+ }
+
+ #9 {
+     background-color: aqua;
+ }
+
+ #10 {
+     background-color: blue;
+ }
+
+ #11 {
+     background-color: blueviolet;
+ }
+
+ #12 {
+     background-color: brown;
+ }
+
+ #13 {
+     background-color: chartreuse;
+ }
+
+ #14 {
+     background-color: cornflowerblue;
+ }
+
+ #15 {
+     background-color: darkgreen;
+ }
+
+ #16 {
+     background-color: darkorange;
  }
