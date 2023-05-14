@@ -1,82 +1,56 @@
-const squaresContainer = document.querySelector(".squares");
-const colors = ["blue", "yellow", "green", "red", "orange", "purple", "aqua", "grey"];
-const colorsPicklist = [...colors, ...colors];
-const squareCount = colorsPicklist.length;
+const container = document.querySelector(".container");
+let cards [];
+let firstCard, seconCard;
+let lockBoard = false;
+let score = 0;
 
-// Game start
-let revealedCount = 0;
-let activeSquare = null;
-let awaitingEndOfMove = false;
+var color = ["aqua", "blue", "blueviolet", "brown", "chartreuse", "cornflowerblue", "darkgreen", "darkorange"];
+var randomChosenColor = color[newSequence];
 
-// Build up squares
-for (let i = 0; i < squareCount; i++) {
-    const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
-    const color = colorsPicklist[randomIndex];
-    const square = buildSquare(color);
-
-    console.count(square);
-    squaresContainer.appendChild(square);
-
+function newSequence() {
+    var randomNumber = Math.floor(Math.random() * 8);
 }
 
-// Create squares
-function buildSquare(color) {
-    const element = document.createElement("div");
+//--flip cards--//
+function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
 
-    element.classList.add("square");
-    element.setAttribute("data-color", color);
-    element.setAttribute("data-revealed", "false");
+    this.classList.add("flipped");
 
-    return element;
-
-}
-
-const squares = document.querySelectorAll('.squares');
-
-squares.forEach(square => {
-    square.addEventListener("click", () => {
-        const revealed = element.getAttribute("data-revealed");
-
-        if (
-            awaitingEndOfMove
-            || revealed === "true"
-            || element == activeSquare
-        ) {
-            return;
-        }
-
-        // Show color
-        element.style.backgroundColor = color;
-
-        if (!activeSquare) {
-            activeSquare = element;
-
-            return;
-        }
-    });
-
-});
-
-const collection = document.getElementsByClassName("square");
-
-element.addEventListener("click", () => {
-    const revealed = element.getAttribute("data-revealed");
-
-    if (
-        awaitingEndOfMove
-        || revealed === "true"
-        || element == activeSquare
-    ) {
+    if (!firstCard) {
+        firstCard = this;
         return;
     }
 
-    // Reveal color
-    element.style.backgroundColor = color;
+    secondCard = this;
+    score++;
+    document.querySelector(".score").textContent = score;
+    lockBoard = true;
 
-    if (!activeSquare) {
-        activeSquare = element;
+    checkMatch();
+}
 
-        return;                                                                                    finished here;
+//--check match--//
+var color = ["aqua", "blue", "blueviolet", "brown", "chartreuse", "cornflowerblue", "darkgreen", "darkorange"];
+let firstCard = document.getElementsByClassName("cell");
+let secondCard = Math.floor(Math.random() * 8);
+
+function checkMatch() {
+    if (firstCard === secondCard) {
+        flipCard;
+        score++;
+        document.querySelector(".score").textContent = score;
+    } else {
+        disableCards();
+        unflipCards();
+        score++;
+        document.querySelector(".score").textContent = score;
     }
+}
 
-    const colorToMatch = activeSquare.getAttribute("data-color");
+function restart() {
+    resetBoard();
+    score = 0;
+    document.querySelector(".score").textContent = score;
+}
